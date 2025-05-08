@@ -45,4 +45,4 @@ if (true) {
 }
 
 console.log(edad);
-console.log(pais)
+console.log(pais);
