@@ -30,3 +30,12 @@ for (let clave in persona) {
     console.log(clave + ": " + persona[clave]);
 }
 
+// break: interrumpe el bucle completamente. continue: salta a la siguiente iteración.
+
+for (let i = 0; i < 5; i++) {
+    if (i === 2) continue;
+    console.log(i);
+}
+
+
+
