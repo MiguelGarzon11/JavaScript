@@ -39,7 +39,7 @@ x *= 2; // x = x * 2 -> 30
 5 - 2   // 3
 5 * 2   // 10
 5 / 2   // 2.5
-5 % 2   // 1 (reciduo)
+5 % 2   // 1 (reciduo) 
 
 // 7. Bitwise Operators (Operadores a nivel de bits)
 // Trabajan con los bits de los números: se usan en optimización y sistemas embebidos.

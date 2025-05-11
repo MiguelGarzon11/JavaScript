@@ -1,0 +1,11 @@
+¿Qué son las DOM APIs?
+
+Las DOM APIs (interfaces de Programación de Aplicaciones) son funciones y propiedades que JavaScript nos da para
+interactuar con el HTML.
+
+Podemos:
+Cambiar el texto de un elemento.
+Crear o eliminar etiquetas.
+Cambiar el estilo (colores, tamaño, etc).
+Manejar eventos como clics.
+
