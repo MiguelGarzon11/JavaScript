@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuario Aleatorio</title>
+</head>
+<body>
+    <h1>Usuario Aleatorio</h1>
+    <button onclick="cargarUsuario()">Cargar Usuario</button>
+    <div id="resultado" style="margin-top: 20px;"></div>
+
+    <script>
+        // 1. Función asincrónica que obtiene datos del servidor
+        async function cargarUsuario() {
+            try {
+                const respuesta = await fetch ("https://randomuser.me/api/");
+                const datos = await respuesta.json(); // Convertimos la respuesta en formato JSON
+
+                // 2. Accedemos a los datos 
+                const usuario = datos.results[0];
+                const nombre = `${usuario.name.first} ${usuario.name.last}`;
+                const email = usuario.email;
+                const pais = usuario.location.country;
+                const imagen = usuario.picture.large;
+
+                // 3. Mostramos los datos en pantallas
+                document.getElementById("resultado").innerHTML = `
+                <p><strong>Nombre:</strong>${nombre}</p>
+                <p><strong>Email:</strong>${email}</p>
+                <p><strong>País:</strong>${pais}</p>
+                <img src="${imagen}" alt="Foto de ${nombre}" width="150" style="border-radius: 10px;">
+                `; 
+                }
+
+                catch (error) {
+                    //4. Captura de Errores
+                    document.getElementById("resultado").innerHTML = `
+                    <p style="color: red;">Error al obtener los datos: ${error} </p>
+                    `;
+                    console.log(error);
+                }
+        }
+    </script>
+</body>
+</html>
+
+
+| Línea                        | Explicación                                             |
+| ---------------------------- | ------------------------------------------------------- |
+| `fetch(...)`                 | Hace una **petición GET** al servidor para traer datos. |
+| `await fetch(...)`           | Espera a que se reciban los datos.                      |
+| `await respuesta.json()`     | Convierte los datos a JSON (objeto JS).                 |
+| `usuario = datos.results[0]` | Accede al primer usuario de la respuesta.               |
+| `try/catch`                  | Captura errores por si falla la conexión.               |
+| `innerHTML`                  | Muestra el resultado en pantalla.                       |
