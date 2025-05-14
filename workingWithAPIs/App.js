@@ -23,4 +23,4 @@ fetch('https://jsonplaceholder.typicode.com/posts')
         container.innerHTML = '<p>Error al cargar los datos.</p>';
     });
 
-    
+     
